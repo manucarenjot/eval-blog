@@ -1,0 +1,6 @@
+SQLSTATE[HY000] [1049] Base 'fjk_eval_blog' inconnue 07/03/2022 10:50:51
+SQLSTATE[HY000] [1049] Base 'fjk_eval_blog' inconnue 07/03/2022 11:01:20
+SQLSTATE[HY000] [1049] Base 'fjk_eval_blog' inconnue 07/03/2022 12:29:05
+SQLSTATE[HY000] [1049] Base 'mon_blog' inconnue 07/03/2022 12:29:53
+SQLSTATE[HY000] [1049] Base 'mon_blogport=3307;charset=utf8' inconnue 07/03/2022 13:21:59
+SQLSTATE[HY000] [1049] Base 'mon_blogport=3307;charset=utf8' inconnue 07/03/2022 13:22:02
