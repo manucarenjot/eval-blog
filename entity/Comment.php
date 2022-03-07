@@ -1,4 +1,6 @@
 <?php
+namespace App\Entity\Comment;
+
 class Comment
 {
     private int $id;

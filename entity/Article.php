@@ -1,4 +1,6 @@
 <?php
+namespace App\Entity\Article;
+
 class Article
 {
     private int $id;

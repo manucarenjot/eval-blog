@@ -1,4 +1,6 @@
 <?php
+namespace App\Entity\Category;
+
 class Category
 {
     private int $id;
