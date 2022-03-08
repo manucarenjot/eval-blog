@@ -1,27 +1,32 @@
 <?php
+namespace App\Connect;
+
+use Config;
+use Exception;
+use PDO;
+
 class Connect extends Config
 {
+    private static ?PDO $pdoObject = null;
+    private static string $dsn = "mysql:host=%s;dbname=%s;port=%s;charset=%s";
+
     /**
-     * @param $server
-     * @param $db
-     * @param $charset
-     * @param $user
-     * @param $password
+     * @return PDO
      */
-
-
-    public function __construct($server, $db, $port,$charset, $user, $password)
+    public static function getPDO(): PDO
     {
-        try {
-            $dns = "mysql:host={$server};dbname={$db};port=$port;={$charset}";
-            $this->pdo = new PDO($dns, $user, $password);
-            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo 'connection effectuée';
-        } catch (PDOException $e) {
-            echo "Une erreur est intervenue ";
-            file_put_contents('PDOerrorlog.txt', $e->getMessage() .
-                " " . date('d/m/Y H:i:s') . "\n", FILE_APPEND);;
+        if (self::$pdoObject === null) {
+            try {
+                $dsn = sprintf(self::$dsn, Config::DB_SERV, Config::DB_NAME, Config::DB_PORT,Config::CHARSET);
+                self::$pdoObject = new PDO($dsn, Config::DB_USERNAME, Config::DB_PASSWORD);
+                self::$pdoObject->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+            }
+            catch (Exception $e) {
+                echo "Une erreur est intervenue ";
+                file_put_contents('PDOerrorlog.txt', $e->getMessage() .
+                    " " . date('d/m/Y H:i:s') . "\n", FILE_APPEND);;
+            }
         }
+        return self::$pdoObject;
     }
-
 }

@@ -1,10 +1,10 @@
 <?php
 class Config
 {
-    private static string $server;
-    private static string $user;
-    private static string $password;
-    private static string $db;
-    private static int $port;
-    private static string $charset;
+    public const CHARSET = 'utf8';
+    public const DB_NAME = 'fjk_eval_blog';
+    public const DB_SERV = 'localhost';
+    public const DB_USERNAME = 'root';
+    public const DB_PORT = 3307;
+    public const DB_PASSWORD = '';
 }
