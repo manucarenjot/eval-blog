@@ -13,6 +13,4 @@ require __DIR__ . '/controleur/Homecontroleur.php';
 require __DIR__ . '/controleur/ArticleControler.php';
 require __DIR__ . '/controleur/ErrorControler.php';
 
-require __DIR__ . '/Routeur/AbstractRouteur.php';
-require __DIR__ . '/Routeur/RouteurHome.php';
-require __DIR__ . '/Routeur/ArticleRouteur.php';
+require __DIR__ . '/Routeur/Routeur.php';

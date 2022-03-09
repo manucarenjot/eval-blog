@@ -1,19 +1,17 @@
 <?php
-use App\Routeur\AbstractRouteur;
-use App\Routeur\ArticleRouteur;
-use App\Routeur\RouteurHome;
+use App\Routeur\Routeur;
 
 require '../require.php';
 
-$page = AbstractRouteur::secure($_GET['c']) ??'home';
+$page = Routeur::secure($_GET['c']) ??'home';
 
 //TODO
 switch ($page) {
     case 'home':
-    RouteurHome::route();
-    break;
+        Routeur::route('Homecontroleur');
+        break;
     case 'article':
-        ArticleRouteur::route();
+        Routeur::route('ArticleControler');
         break;
     default:
         (new ErrorControler())->error404($page);

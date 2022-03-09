@@ -2,9 +2,13 @@
 namespace App\Routeur;
 
 
-abstract class AbstractRouteur
+
+
+class Routeur
 {
-    abstract public static function route(?string $action = null);
+    public static function route(string $controller, ?string $action = null) {
+        (new $controller())->index();
+    }
 
 
     public static function secure(?string $param): ?string
