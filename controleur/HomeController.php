@@ -1,7 +1,7 @@
 <?php
 
 use App\Controller\AbstractController;
-class Homecontroleur extends AbstractController
+class HomeController extends AbstractController
 {
 
     public function index() {

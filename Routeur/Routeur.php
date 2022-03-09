@@ -1,13 +1,18 @@
 <?php
 namespace App\Routeur;
 
-
+use UserController;
 
 
 class Routeur
 {
     public static function route(string $controller, ?string $action = null) {
-        (new $controller())->index();
+        $control = new $controller();
+        $control->index();
+        switch ($action) {
+            case 'statistiques':
+        $control->userStats();
+        }
     }
 
 

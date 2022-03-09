@@ -9,8 +9,9 @@ require __DIR__ . '/Model/manager/RoleManager.php';
 require __DIR__ . '/Model/manager/ArticleManager.php';
 
 require __DIR__ . '/controleur/AbstractController.php';
-require __DIR__ . '/controleur/Homecontroleur.php';
-require __DIR__ . '/controleur/ArticleControler.php';
+require __DIR__ . '/controleur/HomeController.php';
+require __DIR__ . '/controleur/ArticleController.php';
+require __DIR__ . '/controleur/UserController.php';
 require __DIR__ . '/controleur/ErrorControler.php';
 
 require __DIR__ . '/Routeur/Routeur.php';

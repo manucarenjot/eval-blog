@@ -11,6 +11,6 @@ abstract public function index();
      */
     public static function render(string $param) {
         ob_start();
-        require __DIR__. '/../view/' . $param . '.php';
+        require __DIR__. '/../view/' . $param . '.html.php';
     }
 }
