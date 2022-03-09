@@ -1,9 +1,16 @@
 <?php
+namespace APP\Controller;
 
-class AbstractController
+abstract class AbstractController
 {
+abstract public function index();
+
+
+    /**
+     * @param string $param
+     */
     public static function render(string $param) {
         ob_start();
-        require __DIR__. '/../view/public/' . $param . '.php';
+        require __DIR__. '/../view/' . $param . '.php';
     }
 }

@@ -1,10 +1,11 @@
 <?php
+
+use App\Controller\AbstractController;
 class Homecontroleur extends AbstractController
 {
 
-    public static function route() {
-//TODO
-        AbstractController::render('home');
+    public function index() {
+        $this->render('public/home');
     }
 
 }
