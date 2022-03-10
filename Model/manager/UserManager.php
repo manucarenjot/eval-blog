@@ -4,16 +4,15 @@ use App\Connect\Connect;
 
 class UserManager
 {
-    public static function add() {
+    public static function add( $firstname,  $lastname,  $mail,  $username, $password) {
 
-        $firstname = trim(strip_tags($_POST['firstname']));
-        $lastname = trim(strip_tags($_POST['lastname']));
-        $mail = trim(strip_tags($_POST['mail']));
-        $username = trim(strip_tags($_POST['username']));
-        $password = password_hash($_POST['password'], PASSWORD_ARGON2I);
 
-        Connect::getPDO()->exec("INSERT INTO user (firstname, lastname, mail, username, password) 
-                                    VALUE ($firstname, $lastname, $mail, $username, $password)
+
+        $add = Connect::getPDO()->prepare("INSERT INTO user (firstname, lastname, mail, username, password) 
+                                    VALUES (?, ?, ?, ?, ?)
                                     ");
+
+        $add->execute($firstname, $lastname, $mail, $username, $password);
+
     }
 }

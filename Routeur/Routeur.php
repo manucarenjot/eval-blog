@@ -10,8 +10,12 @@ class Routeur
         $control = new $controller();
         $control->index();
         switch ($action) {
-            case 'statistiques':
-        $control->userStats();
+            case 'inscription':
+        $control->userRegister();
+            break;
+            case 'login':
+        $control->userLogin();
+            break;
         }
     }
 

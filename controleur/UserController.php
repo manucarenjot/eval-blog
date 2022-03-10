@@ -7,11 +7,22 @@ class UserController extends AbstractController
 {
 
     public function index() {
-        $this->render('user/user');
+        //$this->render('user/user');
     }
 
-    public function userStats()
+    public function userRegister()
     {
-        $this->render('user/statistiques');
+        $this->render('user/inscription');
+    }
+
+    public function userLogin()
+    {
+        $this->render('user/login');
+    }
+
+    public function addUser() {
+        if ($this->getPost()) {
+
+        }
     }
 }

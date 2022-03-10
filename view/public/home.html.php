@@ -9,5 +9,8 @@
 </head>
 <body>
 <h1>BIENVENUE</h1>
+
+<a href="index.php?c=user&a=inscription">S'inscrire /</a>
+<a href="index.php?c=user&a=login">Se connecter</a>
 </body>
 </html>
