@@ -3,12 +3,12 @@ namespace App\Entity\User;
 
 class User
 {
-    private int $id;
-    private string $firstname;
-    private string $lastname;
-    private string $mail;
-    private string $username;
-    private string $password;
+    public int $id;
+    public string $firstname;
+    public string $lastname;
+    public string $mail;
+    public string $username;
+    public string $password;
 
     /**
      * @return int

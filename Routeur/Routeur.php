@@ -11,7 +11,7 @@ class Routeur
         $control->index();
         switch ($action) {
             case 'inscription':
-        $control->userRegister();
+        $control->addUser();
             break;
             case 'login':
         $control->userLogin();

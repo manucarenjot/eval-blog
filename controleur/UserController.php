@@ -22,6 +22,9 @@ class UserController extends AbstractController
         $this->render('user/login');
     }
 
+    /*
+     *
+     */
     public function addUser() {
         if ($this->getPost()) {
             $firstname = strip_tags($_POST['firstname']);
@@ -30,12 +33,19 @@ class UserController extends AbstractController
             $username = trim(htmlentities($_POST['username']));
             $password = $_POST['password'];
 
+            //Faire les verifications du formulaire
+
             $user = new User();
-            $user->setFirstname($firstname);
-            $user->setLastname($lastname);
-            $user->setMail($mail);
-            $user->setUsername($username);
-            $user->setPassword($password);
+            $user
+                ->setFirstname($firstname)
+                ->setLastname($lastname)
+                ->setMail($mail)
+                ->setUsername($username)
+                ->setPassword($password)
+                ;
+
+            UserManager::add($user);
         }
+        $this->render('user/inscription');
     }
 }

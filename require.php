@@ -2,6 +2,8 @@
 require __DIR__ . '/db/Config.php';
 require __DIR__ . '/db/Connect.php';
 
+require __DIR__ . '/Model/entity/User.php';
+
 require __DIR__ . '/Model/manager/UserManager.php';
 require __DIR__ . '/Model/manager/CategoryManager.php';
 require __DIR__ . '/Model/manager/CommentManager.php';
