@@ -1,12 +1,13 @@
 <?php
 
 use App\Connect\Connect;
-use App\Entity\User\User;
+use App\Model\Entity\User\User;
+
 
 
 class UserManager extends User
 {
-    public static function add(User $user): bool {
+    public static function add(User $user) {
 
         //TODO
 
@@ -14,15 +15,17 @@ class UserManager extends User
                                     VALUES (:firstname, :lastname, :mail, :username, :password)
                                     ");
 
+
         $add->bindValue(':firstname', $user->getFirstname());
         $add->bindValue(':lastname', $user->getLastname());
-        $add->bindValue(':email', $user->getMail());
+        $add->bindValue(':mail', $user->getMail());
         $add->bindValue(':username', $user->getUsername());
         $add->bindValue(':password', $user->getPassword());
+        $add->execute();
 
-        $addPrepared = $add->execute();
 
-        return $addPrepared;
+
+        return $add;
 
     }
 }

@@ -1,7 +1,7 @@
 <?php
 namespace App\Routeur;
 
-use UserController;
+
 
 
 class Routeur

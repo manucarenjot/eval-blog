@@ -1,30 +1,13 @@
 <?php
-namespace App\Entity\User;
+namespace App\Model\Entity\User;
 
 class User
 {
-    public int $id;
-    public string $firstname;
-    public string $lastname;
-    public string $mail;
-    public string $username;
-    public string $password;
-
-    /**
-     * @return int
-     */
-    public function getId(): int
-    {
-        return $this->id;
-    }
-
-    /**
-     * @param int $id
-     */
-    public function setId(int $id): void
-    {
-        $this->id = $id;
-    }
+    private string $firstname;
+    private string $lastname;
+    private string $mail;
+    private string $username;
+    private string $password;
 
     /**
      * @return string
@@ -37,9 +20,10 @@ class User
     /**
      * @param string $firstname
      */
-    public function setFirstname(string $firstname): void
+    public function setFirstname(string $firstname): self
     {
         $this->firstname = $firstname;
+        return $this;
     }
 
     /**
@@ -53,9 +37,10 @@ class User
     /**
      * @param string $lastname
      */
-    public function setLastname(string $lastname): void
+    public function setLastname(string $lastname): self
     {
         $this->lastname = $lastname;
+        return $this;
     }
 
     /**
@@ -69,9 +54,10 @@ class User
     /**
      * @param string $mail
      */
-    public function setMail(string $mail): void
+    public function setMail(string $mail): self
     {
         $this->mail = $mail;
+        return $this;
     }
 
     /**
@@ -85,9 +71,10 @@ class User
     /**
      * @param string $username
      */
-    public function setUsername(string $username): void
+    public function setUsername(string $username): self
     {
         $this->username = $username;
+        return $this;
     }
 
     /**
@@ -101,8 +88,10 @@ class User
     /**
      * @param string $password
      */
-    public function setPassword(string $password): void
+    public function setPassword(string $password): self
     {
         $this->password = $password;
+        return $this;
     }
+
 }

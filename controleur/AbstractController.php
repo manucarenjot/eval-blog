@@ -19,7 +19,14 @@ abstract public function index();
         return isset($_POST['send']);
     }
 
+    public function getFormField(string $field, $default = null)
+    {
+        if (!isset($_POST[$field])) {
+            return (null === $default) ? '' : $default;
+        }
 
+        return $_POST[$field];
+    }
 
     //$lastname = trim(strip_tags($_POST['lastname']));
     //$mail = trim(strip_tags($_POST['mail']));
