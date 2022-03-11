@@ -1,4 +1,6 @@
 <?php
+require __DIR__ . '/view/public/index.php';
+
 require __DIR__ . '/db/Config.php';
 require __DIR__ . '/db/Connect.php';
 
