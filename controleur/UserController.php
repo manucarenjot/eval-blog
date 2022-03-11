@@ -2,6 +2,8 @@
 
 
 use APP\Controller\AbstractController;
+use App\Entity\User\User;
+
 
 class UserController extends AbstractController
 {
@@ -22,7 +24,18 @@ class UserController extends AbstractController
 
     public function addUser() {
         if ($this->getPost()) {
+            $firstname = strip_tags($_POST['firstname']);
+            $lastname = strip_tags($_POST['lastname']);
+            $mail = filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL);
+            $username = trim(htmlentities($_POST['username']));
+            $password = $_POST['password'];
 
+            $user = new User();
+            $user->setFirstname($firstname);
+            $user->setLastname($lastname);
+            $user->setMail($mail);
+            $user->setUsername($username);
+            $user->setPassword($password);
         }
     }
 }
