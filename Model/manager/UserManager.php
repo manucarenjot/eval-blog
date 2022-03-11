@@ -9,7 +9,7 @@ class UserManager extends User
 {
     public static function add(User $user) {
 
-        //TODO
+        //TODO à améliorer
 
         $add = Connect::getPDO()->prepare("INSERT INTO user (firstname, lastname, mail, username, password) 
                                     VALUES (:firstname, :lastname, :mail, :username, :password)
@@ -28,34 +28,17 @@ class UserManager extends User
         return $add;
 
     }
-}
 
 
+    public function mailExist($user) {
+        $search = Connect::getPDO()->query("SELECT COUNT(*) FROM user WHERE mail");
 
-/**
-    public static function addUser(\App\Model\Entity\User &$user): bool
-    {
-        $stmt = DB::getPDO()->prepare("
-            INSERT INTO ".self::TABLE." (email, firstname, lastname, password, age)
-            VALUES (:email, :firstname, :lastname, :password, :age)
-        ");
-
-        $stmt->bindValue(':email', $user->getEmail());
-        $stmt->bindValue(':firstname', $user->getFirstname());
-        $stmt->bindValue(':lastname', $user->getLastname());
-        $stmt->bindValue(':password', $user->getPassword());
-        $stmt->bindValue(':age', $user->getAge());
-
-        $result = $stmt->execute();
-        $user->setId(DB::getPDO()->lastInsertId());
-        if($result) {
-            $role = RoleManager::getRoleByName(RoleManager::ROLE_USER);
-            $resultRole = DB::getPDO()->exec("
-                INSERT INTO ".self::TABLE_USER_ROLE. " (user_fk, role_fk) VALUES (".$user->getId().", ".$role->getId().")
-            ");
-
+        if ($user->getMail() == $search->fetch()) {
+            $_SESSION['errors'] = ['Cette adresse mail existe déjà'];
         }
-        return $result && $resultRole;
+
+
     }
 }
- **/
+
+

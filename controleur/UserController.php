@@ -30,6 +30,8 @@ class UserController extends AbstractController
 
 
             $errors = [];
+            new UserManager()::ma
+
             if (empty($_POST['firstname'])) {
                 $errors = ['Le champs \'Firstname\' est vide'];
             }
@@ -68,6 +70,7 @@ class UserController extends AbstractController
             if ($_POST['password'] !== $_POST['password-repeat']) {
                 $errors = ['les mots de passe doivent être identiques'];
             }
+
             if(count($errors) > 0) {
             $_SESSION['errors'] = $errors;
         }
