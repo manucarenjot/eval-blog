@@ -30,7 +30,9 @@ class UserController extends AbstractController
 
 
             $errors = [];
-            new UserManager()::ma
+            $mailExist = new UserManager();
+
+            $mailExist -> mailExist($_POST['mail']);
 
             if (empty($_POST['firstname'])) {
                 $errors = ['Le champs \'Firstname\' est vide'];

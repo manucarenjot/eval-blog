@@ -31,7 +31,9 @@ class UserManager extends User
 
 
     public function mailExist($user) {
-        $search = Connect::getPDO()->query("SELECT COUNT(*) FROM user WHERE mail");
+
+        //todo à vérifier
+        $search = Connect::getPDO()->query("SELECT COUNT(*) FROM user WHERE mail = {$user}");
 
         if ($user->getMail() == $search->fetch()) {
             $_SESSION['errors'] = ['Cette adresse mail existe déjà'];
